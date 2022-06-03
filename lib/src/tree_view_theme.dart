@@ -59,15 +59,15 @@ class TreeViewTheme {
   final Duration expandSpeed;
 
   const TreeViewTheme({
-    this.colorScheme: const ColorScheme.light(),
-    this.iconTheme: const IconThemeData.fallback(),
-    this.expanderTheme: const ExpanderThemeData.fallback(),
-    this.labelStyle: const TextStyle(),
-    this.parentLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+    this.colorScheme = const ColorScheme.light(),
+    this.iconTheme = const IconThemeData.fallback(),
+    this.expanderTheme = const ExpanderThemeData.fallback(),
+    this.labelStyle = const TextStyle(),
+    this.parentLabelStyle = const TextStyle(fontWeight: FontWeight.bold),
     this.labelOverflow,
     this.parentLabelOverflow,
-    this.levelPadding: _kDefaultLevelPadding,
-    this.dense: true,
+    this.levelPadding = _kDefaultLevelPadding,
+    this.dense = true,
     this.verticalSpacing,
     this.horizontalSpacing,
     this.iconPadding: 8,

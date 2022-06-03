@@ -136,8 +136,8 @@ class _TreeNodeState extends State<TreeNode>
     TreeView? _treeView = TreeView.of(context);
     assert(_treeView != null, 'TreeView must exist in context');
     TreeViewTheme _theme = _treeView!.theme;
-    bool isSelected = _treeView.controller.selectedKey != null &&
-        _treeView.controller.selectedKey == widget.node.key;
+    // bool isSelected = _treeView.controller.selectedKey != null &&
+    //     _treeView.controller.selectedKey == widget.node.key;
     return Container(
       alignment: Alignment.center,
       width:
@@ -146,13 +146,7 @@ class _TreeNodeState extends State<TreeNode>
           ? Icon(
               widget.node.icon,
               size: _theme.iconTheme.size,
-              color: isSelected
-                  ? widget.node.selectedIconColor == null
-                      ? _theme.colorScheme.onPrimary
-                      : widget.node.selectedIconColor
-                  : widget.node.iconColor == null
-                      ? _theme.iconTheme.color
-                      : widget.node.iconColor,
+              color: widget.node.iconColor,
             )
           : null,
     );
@@ -218,35 +212,36 @@ class _TreeNodeState extends State<TreeNode>
             onTap: _handleTap,
             onDoubleTap: _handleDoubleTap,
             child: labelContainer,
-          )
+            hoverColor: Colors.transparent)
         : InkWell(
             onTap: _handleTap,
             child: labelContainer,
-          );
+            hoverColor: Colors.transparent);
     if (widget.node.isParent) {
       if (_treeView.supportParentDoubleTap && canSelectParent) {
         _tappable = InkWell(
-          onTap: canSelectParent ? _handleTap : _handleExpand,
-          onDoubleTap: () {
-            _handleExpand();
-            _handleDoubleTap();
-          },
-          child: labelContainer,
-        );
+            onTap: canSelectParent ? _handleTap : _handleExpand,
+            onDoubleTap: () {
+              _handleExpand();
+              _handleDoubleTap();
+            },
+            child: labelContainer,
+            hoverColor: Colors.transparent);
       } else if (_treeView.supportParentDoubleTap) {
         _tappable = InkWell(
-          onTap: _handleExpand,
-          onDoubleTap: _handleDoubleTap,
-          child: labelContainer,
-        );
+            onTap: _handleExpand,
+            onDoubleTap: _handleDoubleTap,
+            child: labelContainer,
+            hoverColor: Colors.transparent);
       } else {
         _tappable = InkWell(
-          onTap: canSelectParent ? _handleTap : _handleExpand,
-          child: labelContainer,
-        );
+            onTap: canSelectParent ? _handleTap : _handleExpand,
+            child: labelContainer,
+            hoverColor: Colors.transparent);
       }
     }
     return Container(
+      width: 300,
       color: isSelected ? _theme.colorScheme.primary : null,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,

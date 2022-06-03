@@ -56,11 +56,11 @@ class ExpanderThemeData {
 
   const ExpanderThemeData({
     this.color,
-    this.position: ExpanderPosition.start,
-    this.type: ExpanderType.caret,
-    this.size: _kDefaultExpanderSize,
-    this.modifier: ExpanderModifier.none,
-    this.animated: true,
+    this.position = ExpanderPosition.start,
+    this.type = ExpanderType.caret,
+    this.size = _kDefaultExpanderSize,
+    this.modifier = ExpanderModifier.none,
+    this.animated = true,
   });
 
   /// Creates an expander icon theme with some reasonable default values.

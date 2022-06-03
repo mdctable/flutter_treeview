@@ -49,9 +49,9 @@ class Node<T> {
   const Node({
     required this.key,
     required this.label,
-    this.children: const [],
-    this.expanded: false,
-    this.parent: false,
+    this.children = const [],
+    this.expanded = false,
+    this.parent = false,
     this.icon,
     this.iconColor,
     this.selectedIconColor,
@@ -78,9 +78,7 @@ class Node<T> {
     String _label = map['label'];
     var _data = map['data'];
     List<Node> _children = [];
-    if (_key == null) {
-      _key = Utilities.generateRandom();
-    }
+    _key ??= Utilities.generateRandom();
     // if (map['icon'] != null) {
     // int _iconData = int.parse(map['icon']);
     // if (map['icon'].runtimeType == String) {

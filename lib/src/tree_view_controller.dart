@@ -44,7 +44,8 @@ class TreeViewController {
 
   /// Creates a copy of this controller but with the given fields
   /// replaced with the new values.
-  TreeViewController copyWith<T>({List<Node<T>>? children, String? selectedKey}) {
+  TreeViewController copyWith<T>(
+      {List<Node<T>>? children, String? selectedKey}) {
     return TreeViewController(
       children: children ?? this.children,
       selectedKey: selectedKey ?? this.selectedKey,
@@ -78,7 +79,7 @@ class TreeViewController {
         list.map((Map<String, dynamic> item) => Node.fromMap<T>(item)).toList();
     return TreeViewController(
       children: treeData,
-      selectedKey: this.selectedKey,
+      selectedKey: selectedKey,
     );
   }
 
@@ -121,7 +122,8 @@ class TreeViewController {
   ///   controller = controller.withUpdateNode(key, newNode);
   /// });
   /// ```
-  TreeViewController withUpdateNode<T>(String key, Node<T> newNode, {Node? parent}) {
+  TreeViewController withUpdateNode<T>(String key, Node<T> newNode,
+      {Node? parent}) {
     List<Node> _data = updateNode<T>(key, newNode, parent: parent);
     return TreeViewController(
       children: _data,
