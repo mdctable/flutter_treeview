@@ -95,8 +95,9 @@ class _TreeNodeState extends State<TreeNode>
         });
       }
     });
-    if (_treeView!.onExpansionChanged != null)
+    if (_treeView!.onExpansionChanged != null) {
       _treeView.onExpansionChanged!(widget.node.key, _isExpanded);
+    }
   }
 
   void _handleTap() {
@@ -212,10 +213,12 @@ class _TreeNodeState extends State<TreeNode>
             onTap: _handleTap,
             onDoubleTap: _handleDoubleTap,
             child: labelContainer,
+            highlightColor: Colors.grey[200],
             hoverColor: Colors.transparent)
         : InkWell(
             onTap: _handleTap,
             child: labelContainer,
+            highlightColor: Colors.grey[200],
             hoverColor: Colors.transparent);
     if (widget.node.isParent) {
       if (_treeView.supportParentDoubleTap && canSelectParent) {
@@ -226,39 +229,45 @@ class _TreeNodeState extends State<TreeNode>
               _handleDoubleTap();
             },
             child: labelContainer,
+            highlightColor: Colors.grey[200],
             hoverColor: Colors.transparent);
       } else if (_treeView.supportParentDoubleTap) {
         _tappable = InkWell(
             onTap: _handleExpand,
             onDoubleTap: _handleDoubleTap,
             child: labelContainer,
+            highlightColor: Colors.grey[200],
             hoverColor: Colors.transparent);
       } else {
         _tappable = InkWell(
             onTap: canSelectParent ? _handleTap : _handleExpand,
             child: labelContainer,
+            highlightColor: Colors.grey[200],
             hoverColor: Colors.transparent);
       }
     }
-    return Container(
-      width: 300,
-      color: isSelected ? _theme.colorScheme.primary : null,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: _theme.expanderTheme.position == ExpanderPosition.end
-            ? <Widget>[
-                Expanded(
-                  child: _tappable,
-                ),
-                arrowContainer,
-              ]
-            : <Widget>[
-                arrowContainer,
-                Expanded(
-                  child: _tappable,
-                ),
-              ],
+    return ClipRRect(
+      borderRadius: const BorderRadius.all(Radius.circular(5)),
+      child: Container(
+        width: double.infinity,
+        color: isSelected ? _theme.colorScheme.primary : null,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: _theme.expanderTheme.position == ExpanderPosition.end
+              ? <Widget>[
+                  Expanded(
+                    child: _tappable,
+                  ),
+                  arrowContainer,
+                ]
+              : <Widget>[
+                  arrowContainer,
+                  Expanded(
+                    child: _tappable,
+                  ),
+                ],
+        ),
       ),
     );
   }
@@ -335,7 +344,7 @@ class _TreeNodeExpanderState extends State<_TreeNodeExpander>
             ? isEnd
                 ? widget._expandSpeed * 0.625
                 : widget._expandSpeed
-            : Duration(milliseconds: 0),
+            : const Duration(milliseconds: 0),
         vsync: this,
       );
       animation = Tween<double>(

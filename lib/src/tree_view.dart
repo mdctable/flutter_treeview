@@ -127,7 +127,6 @@ class _TreeViewData extends StatelessWidget {
   Widget build(BuildContext context) {
     ThemeData _parentTheme = Theme.of(context);
     return Theme(
-      data: _parentTheme,
       child: ListView(
         shrinkWrap: shrinkWrap!,
         primary: primary,
@@ -137,6 +136,7 @@ class _TreeViewData extends StatelessWidget {
           return TreeNode(node: node);
         }).toList(),
       ),
+      data: _parentTheme,
     );
   }
 }
