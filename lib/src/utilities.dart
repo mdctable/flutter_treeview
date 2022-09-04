@@ -79,7 +79,7 @@ class Utilities {
         case 'amber400':
           return Colors.amber.shade400;
         case 'amber500':
-          return Colors.amber.shade500;
+          return Colors.amber.shade900;
         case 'amber600':
           return Colors.amber.shade600;
         case 'amber700':
@@ -91,7 +91,7 @@ class Utilities {
         case 'amberAccent':
           return Colors.amberAccent;
         case 'amberAccent50':
-          return Colors.amberAccent.shade50;
+          return Colors.amberAccent.shade100;
         case 'amberAccent100':
           return Colors.amberAccent.shade100;
         case 'amberAccent200':
@@ -111,7 +111,7 @@ class Utilities {
         case 'blue400':
           return Colors.blue.shade400;
         case 'blue500':
-          return Colors.blue.shade500;
+          return Colors.blue.shade900;
         case 'blue600':
           return Colors.blue.shade600;
         case 'blue700':
@@ -123,7 +123,7 @@ class Utilities {
         case 'blueAccent':
           return Colors.blueAccent;
         case 'blueAccent50':
-          return Colors.blueAccent.shade50;
+          return Colors.blueAccent.shade100;
         case 'blueAccent100':
           return Colors.blueAccent.shade100;
         case 'blueAccent200':
@@ -143,7 +143,7 @@ class Utilities {
         case 'blueGrey400':
           return Colors.blueGrey.shade400;
         case 'blueGrey500':
-          return Colors.blueGrey.shade500;
+          return Colors.blueGrey.shade900;
         case 'blueGrey600':
           return Colors.blueGrey.shade600;
         case 'blueGrey700':
@@ -163,7 +163,7 @@ class Utilities {
         case 'brown400':
           return Colors.brown.shade400;
         case 'brown500':
-          return Colors.brown.shade500;
+          return Colors.brown.shade900;
         case 'brown600':
           return Colors.brown.shade600;
         case 'brown700':
@@ -183,7 +183,7 @@ class Utilities {
         case 'cyan400':
           return Colors.cyan.shade400;
         case 'cyan500':
-          return Colors.cyan.shade500;
+          return Colors.cyan.shade900;
         case 'cyan600':
           return Colors.cyan.shade600;
         case 'cyan700':
@@ -195,7 +195,7 @@ class Utilities {
         case 'cyanAccent':
           return Colors.cyanAccent;
         case 'cyanAccent50':
-          return Colors.cyanAccent.shade50;
+          return Colors.cyanAccent.shade100;
         case 'cyanAccent100':
           return Colors.cyanAccent.shade100;
         case 'cyanAccent200':
@@ -215,7 +215,7 @@ class Utilities {
         case 'deepOrange400':
           return Colors.deepOrange.shade400;
         case 'deepOrange500':
-          return Colors.deepOrange.shade500;
+          return Colors.deepOrange.shade900;
         case 'deepOrange600':
           return Colors.deepOrange.shade600;
         case 'deepOrange700':
@@ -227,7 +227,7 @@ class Utilities {
         case 'deepOrangeAccent':
           return Colors.deepOrangeAccent;
         case 'deepOrangeAccent50':
-          return Colors.deepOrangeAccent.shade50;
+          return Colors.deepOrangeAccent.shade100;
         case 'deepOrangeAccent100':
           return Colors.deepOrangeAccent.shade100;
         case 'deepOrangeAccent200':
@@ -247,7 +247,7 @@ class Utilities {
         case 'deepPurple400':
           return Colors.deepPurple.shade400;
         case 'deepPurple500':
-          return Colors.deepPurple.shade500;
+          return Colors.deepPurple.shade900;
         case 'deepPurple600':
           return Colors.deepPurple.shade600;
         case 'deepPurple700':
@@ -259,7 +259,7 @@ class Utilities {
         case 'deepPurpleAccent':
           return Colors.deepPurpleAccent;
         case 'deepPurpleAccent50':
-          return Colors.deepPurpleAccent.shade50;
+          return Colors.deepPurpleAccent.shade100;
         case 'deepPurpleAccent100':
           return Colors.deepPurpleAccent.shade100;
         case 'deepPurpleAccent200':
@@ -279,7 +279,7 @@ class Utilities {
         case 'green400':
           return Colors.green.shade400;
         case 'green500':
-          return Colors.green.shade500;
+          return Colors.green.shade900;
         case 'green600':
           return Colors.green.shade600;
         case 'green700':
@@ -291,7 +291,7 @@ class Utilities {
         case 'greenAccent':
           return Colors.greenAccent;
         case 'greenAccent50':
-          return Colors.greenAccent.shade50;
+          return Colors.greenAccent.shade100;
         case 'greenAccent100':
           return Colors.greenAccent.shade100;
         case 'greenAccent200':
@@ -311,7 +311,7 @@ class Utilities {
         case 'grey400':
           return Colors.grey.shade400;
         case 'grey500':
-          return Colors.grey.shade500;
+          return Colors.grey.shade900;
         case 'grey600':
           return Colors.grey.shade600;
         case 'grey700':
@@ -331,7 +331,7 @@ class Utilities {
         case 'indigo400':
           return Colors.indigo.shade400;
         case 'indigo500':
-          return Colors.indigo.shade500;
+          return Colors.indigo.shade900;
         case 'indigo600':
           return Colors.indigo.shade600;
         case 'indigo700':
@@ -343,7 +343,7 @@ class Utilities {
         case 'indigoAccent':
           return Colors.indigoAccent;
         case 'indigoAccent50':
-          return Colors.indigoAccent.shade50;
+          return Colors.indigoAccent.shade100;
         case 'indigoAccent100':
           return Colors.indigoAccent.shade100;
         case 'indigoAccent200':
@@ -363,7 +363,7 @@ class Utilities {
         case 'lightBlue400':
           return Colors.lightBlue.shade400;
         case 'lightBlue500':
-          return Colors.lightBlue.shade500;
+          return Colors.lightBlue.shade900;
         case 'lightBlue600':
           return Colors.lightBlue.shade600;
         case 'lightBlue700':
@@ -375,7 +375,7 @@ class Utilities {
         case 'lightBlueAccent':
           return Colors.lightBlueAccent;
         case 'lightBlueAccent50':
-          return Colors.lightBlueAccent.shade50;
+          return Colors.lightBlueAccent.shade100;
         case 'lightBlueAccent100':
           return Colors.lightBlueAccent.shade100;
         case 'lightBlueAccent200':
@@ -395,7 +395,7 @@ class Utilities {
         case 'lightGreen400':
           return Colors.lightGreen.shade400;
         case 'lightGreen500':
-          return Colors.lightGreen.shade500;
+          return Colors.lightGreen.shade900;
         case 'lightGreen600':
           return Colors.lightGreen.shade600;
         case 'lightGreen700':
@@ -407,7 +407,7 @@ class Utilities {
         case 'lightGreenAccent':
           return Colors.lightGreenAccent;
         case 'lightGreenAccent50':
-          return Colors.lightGreenAccent.shade50;
+          return Colors.lightGreenAccent.shade100;
         case 'lightGreenAccent100':
           return Colors.lightGreenAccent.shade100;
         case 'lightGreenAccent200':
@@ -427,7 +427,7 @@ class Utilities {
         case 'lime400':
           return Colors.lime.shade400;
         case 'lime500':
-          return Colors.lime.shade500;
+          return Colors.lime.shade900;
         case 'lime600':
           return Colors.lime.shade600;
         case 'lime700':
@@ -439,7 +439,7 @@ class Utilities {
         case 'limeAccent':
           return Colors.limeAccent;
         case 'limeAccent50':
-          return Colors.limeAccent.shade50;
+          return Colors.limeAccent.shade100;
         case 'limeAccent100':
           return Colors.limeAccent.shade100;
         case 'limeAccent200':
@@ -459,7 +459,7 @@ class Utilities {
         case 'orange400':
           return Colors.orange.shade400;
         case 'orange500':
-          return Colors.orange.shade500;
+          return Colors.orange.shade900;
         case 'orange600':
           return Colors.orange.shade600;
         case 'orange700':
@@ -471,7 +471,7 @@ class Utilities {
         case 'orangeAccent':
           return Colors.orangeAccent;
         case 'orangeAccent50':
-          return Colors.orangeAccent.shade50;
+          return Colors.orangeAccent.shade100;
         case 'orangeAccent100':
           return Colors.orangeAccent.shade100;
         case 'orangeAccent200':
@@ -491,7 +491,7 @@ class Utilities {
         case 'pink400':
           return Colors.pink.shade400;
         case 'pink500':
-          return Colors.pink.shade500;
+          return Colors.pink.shade900;
         case 'pink600':
           return Colors.pink.shade600;
         case 'pink700':
@@ -503,7 +503,7 @@ class Utilities {
         case 'pinkAccent':
           return Colors.pinkAccent;
         case 'pinkAccent50':
-          return Colors.pinkAccent.shade50;
+          return Colors.pinkAccent.shade100;
         case 'pinkAccent100':
           return Colors.pinkAccent.shade100;
         case 'pinkAccent200':
@@ -523,7 +523,7 @@ class Utilities {
         case 'purple400':
           return Colors.purple.shade400;
         case 'purple500':
-          return Colors.purple.shade500;
+          return Colors.purple.shade900;
         case 'purple600':
           return Colors.purple.shade600;
         case 'purple700':
@@ -535,7 +535,7 @@ class Utilities {
         case 'purpleAccent':
           return Colors.purpleAccent;
         case 'purpleAccent50':
-          return Colors.purpleAccent.shade50;
+          return Colors.purpleAccent.shade100;
         case 'purpleAccent100':
           return Colors.purpleAccent.shade100;
         case 'purpleAccent200':
@@ -555,7 +555,7 @@ class Utilities {
         case 'red400':
           return Colors.red.shade400;
         case 'red500':
-          return Colors.red.shade500;
+          return Colors.red.shade900;
         case 'red600':
           return Colors.red.shade600;
         case 'red700':
@@ -567,7 +567,7 @@ class Utilities {
         case 'redAccent':
           return Colors.redAccent;
         case 'redAccent50':
-          return Colors.redAccent.shade50;
+          return Colors.redAccent.shade100;
         case 'redAccent100':
           return Colors.redAccent.shade100;
         case 'redAccent200':
@@ -587,7 +587,7 @@ class Utilities {
         case 'teal400':
           return Colors.teal.shade400;
         case 'teal500':
-          return Colors.teal.shade500;
+          return Colors.teal.shade900;
         case 'teal600':
           return Colors.teal.shade600;
         case 'teal700':
@@ -599,7 +599,7 @@ class Utilities {
         case 'tealAccent':
           return Colors.tealAccent;
         case 'tealAccent50':
-          return Colors.tealAccent.shade50;
+          return Colors.tealAccent.shade100;
         case 'tealAccent100':
           return Colors.tealAccent.shade100;
         case 'tealAccent200':
@@ -619,7 +619,7 @@ class Utilities {
         case 'yellow400':
           return Colors.yellow.shade400;
         case 'yellow500':
-          return Colors.yellow.shade500;
+          return Colors.yellow.shade900;
         case 'yellow600':
           return Colors.yellow.shade600;
         case 'yellow700':
@@ -631,7 +631,7 @@ class Utilities {
         case 'yellowAccent':
           return Colors.yellowAccent;
         case 'yellowAccent50':
-          return Colors.yellowAccent.shade50;
+          return Colors.yellowAccent.shade100;
         case 'yellowAccent100':
           return Colors.yellowAccent.shade100;
         case 'yellowAccent200':

@@ -22,7 +22,7 @@ class Node<T> {
   final String label;
 
   /// An optional icon that is displayed on the [TreeNode].
-  final IconData? icon;
+  final Widget? icon;
 
   /// An optional color that will be applied to the icon for this node.
   final Color? iconColor;
@@ -49,9 +49,9 @@ class Node<T> {
   const Node({
     required this.key,
     required this.label,
-    this.children: const [],
-    this.expanded: false,
-    this.parent: false,
+    this.children = const [],
+    this.expanded = false,
+    this.parent = false,
     this.icon,
     this.iconColor,
     this.selectedIconColor,
@@ -74,13 +74,11 @@ class Node<T> {
   /// value. Excepted values include: 1, yes, true and their
   /// associated string values.
   static Node<T> fromMap<T>(Map<String, dynamic> map) {
-    String? _key = map['key'];
-    String _label = map['label'];
-    var _data = map['data'];
-    List<Node> _children = [];
-    if (_key == null) {
-      _key = Utilities.generateRandom();
-    }
+    String? key = map['key'];
+    String label = map['label'];
+    var data = map['data'];
+    List<Node> children = [];
+    key ??= Utilities.generateRandom();
     // if (map['icon'] != null) {
     // int _iconData = int.parse(map['icon']);
     // if (map['icon'].runtimeType == String) {
@@ -93,18 +91,18 @@ class Node<T> {
     // _icon = const IconData(_iconData);
     // }
     if (map['children'] != null) {
-      List<Map<String, dynamic>> _childrenMap = List.from(map['children']);
-      _children = _childrenMap
+      List<Map<String, dynamic>> childrenMap = List.from(map['children']);
+      children = childrenMap
           .map((Map<String, dynamic> child) => Node.fromMap(child))
           .toList();
     }
     return Node<T>(
-      key: '$_key',
-      label: _label,
-      data: _data,
+      key: key,
+      label: label,
+      data: data,
       expanded: Utilities.truthful(map['expanded']),
       parent: Utilities.truthful(map['parent']),
-      children: _children,
+      children: children,
     );
   }
 
@@ -116,7 +114,7 @@ class Node<T> {
     List<Node>? children,
     bool? expanded,
     bool? parent,
-    IconData? icon,
+    Widget? icon,
     Color? iconColor,
     Color? selectedIconColor,
     T? data,
@@ -142,12 +140,12 @@ class Node<T> {
   /// Whether this object has data associated with it.
   bool get hasData => data != null;
 
-  /// Map representation of this object
+  // Map representation of this object
   Map<String, dynamic> get asMap {
     Map<String, dynamic> _map = {
       "key": key,
       "label": label,
-      "icon": icon == null ? null : icon!.codePoint,
+      "icon": icon == null ? null : icon!,
       "iconColor": iconColor == null ? null : iconColor!.toString(),
       "selectedIconColor":
           selectedIconColor == null ? null : selectedIconColor!.toString(),
@@ -169,7 +167,7 @@ class Node<T> {
 
   @override
   int get hashCode {
-    return hashValues(
+    return Object.hash(
       key,
       label,
       icon,

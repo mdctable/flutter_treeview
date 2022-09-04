@@ -7,7 +7,7 @@ import 'tree_view_theme.dart';
 import 'expander_theme_data.dart';
 import 'models/node.dart';
 
-const double _kBorderWidth = 0.75;
+const double _kBorderWidth = 10;
 
 /// Defines the [TreeNode] widget.
 ///
@@ -42,7 +42,7 @@ class _TreeNodeState extends State<TreeNode>
   void initState() {
     super.initState();
     _controller =
-        AnimationController(duration: Duration(milliseconds: 200), vsync: this);
+        AnimationController(duration: Duration(milliseconds: 0), vsync: this);
     _heightFactor = _controller.drive(_easeInTween);
     _isExpanded = widget.node.expanded;
     if (_isExpanded) _controller.value = 1.0;
@@ -143,16 +143,17 @@ class _TreeNodeState extends State<TreeNode>
       width:
           widget.node.hasIcon ? _theme.iconTheme.size! + _theme.iconPadding : 0,
       child: widget.node.hasIcon
-          ? Icon(
-              widget.node.icon,
-              size: _theme.iconTheme.size,
-              color: isSelected
-                  ? widget.node.selectedIconColor == null
-                      ? _theme.colorScheme.onPrimary
-                      : widget.node.selectedIconColor
-                  : widget.node.iconColor == null
-                      ? _theme.iconTheme.color
-                      : widget.node.iconColor,
+          ? SizedBox(
+              width: _theme.iconTheme.size,
+              height: _theme.iconTheme.size,
+              child: widget.node.icon,
+              // color: isSelected
+              //     ? widget.node.selectedIconColor == null
+              //         ? _theme.colorScheme.onPrimary
+              //         : widget.node.selectedIconColor
+              //     : widget.node.iconColor == null
+              //         ? _theme.iconTheme.color
+              //         : widget.node.iconColor,
             )
           : null,
     );
@@ -217,10 +218,14 @@ class _TreeNodeState extends State<TreeNode>
         ? InkWell(
             onTap: _handleTap,
             onDoubleTap: _handleDoubleTap,
+            hoverColor: Colors.transparent,
+            splashColor: Colors.transparent,
             child: labelContainer,
           )
         : InkWell(
             onTap: _handleTap,
+            hoverColor: Colors.transparent,
+            splashColor: Colors.transparent,
             child: labelContainer,
           );
     if (widget.node.isParent) {
@@ -231,17 +236,23 @@ class _TreeNodeState extends State<TreeNode>
             _handleExpand();
             _handleDoubleTap();
           },
+          hoverColor: Colors.transparent,
+          splashColor: Colors.transparent,
           child: labelContainer,
         );
       } else if (_treeView.supportParentDoubleTap) {
         _tappable = InkWell(
           onTap: _handleExpand,
           onDoubleTap: _handleDoubleTap,
+          hoverColor: Colors.transparent,
+          splashColor: Colors.transparent,
           child: labelContainer,
         );
       } else {
         _tappable = InkWell(
           onTap: canSelectParent ? _handleTap : _handleExpand,
+          hoverColor: Colors.transparent,
+          splashColor: Colors.transparent,
           child: labelContainer,
         );
       }
@@ -340,7 +351,7 @@ class _TreeNodeExpanderState extends State<_TreeNodeExpander>
             ? isEnd
                 ? widget._expandSpeed * 0.625
                 : widget._expandSpeed
-            : Duration(milliseconds: 0),
+            : const Duration(milliseconds: 0),
         vsync: this,
       );
       animation = Tween<double>(
@@ -348,8 +359,8 @@ class _TreeNodeExpanderState extends State<_TreeNodeExpander>
         end: isEnd ? 180 : 90,
       ).animate(controller);
     } else {
-      controller =
-          AnimationController(duration: Duration(milliseconds: 0), vsync: this);
+      controller = AnimationController(
+          duration: const Duration(milliseconds: 0), vsync: this);
       animation = Tween<double>(begin: 0, end: 0).animate(controller);
     }
     super.initState();
@@ -372,13 +383,13 @@ class _TreeNodeExpanderState extends State<_TreeNodeExpander>
               ? isEnd
                   ? widget._expandSpeed * 0.625
                   : widget._expandSpeed
-              : Duration(milliseconds: 0);
+              : const Duration(milliseconds: 0);
           animation = Tween<double>(
             begin: 0,
             end: isEnd ? 180 : 90,
           ).animate(controller);
         } else {
-          controller.duration = Duration(milliseconds: 0);
+          controller.duration = const Duration(milliseconds: 0);
           animation = Tween<double>(begin: 0, end: 0).animate(controller);
         }
       });
