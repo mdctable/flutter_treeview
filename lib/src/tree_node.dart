@@ -140,22 +140,10 @@ class _TreeNodeState extends State<TreeNode>
         _treeView.controller.selectedKey == widget.node.key;
     return Container(
       alignment: Alignment.center,
-      width:
-          widget.node.hasIcon ? _theme.iconTheme.size! + _theme.iconPadding : 0,
-      child: widget.node.hasIcon
-          ? SizedBox(
-              width: _theme.iconTheme.size,
-              height: _theme.iconTheme.size,
-              child: widget.node.icon,
-              // color: isSelected
-              //     ? widget.node.selectedIconColor == null
-              //         ? _theme.colorScheme.onPrimary
-              //         : widget.node.selectedIconColor
-              //     : widget.node.iconColor == null
-              //         ? _theme.iconTheme.color
-              //         : widget.node.iconColor,
-            )
-          : null,
+      // width:
+      //     widget.node.hasIcon ? _theme.iconTheme.size! + _theme.iconPadding : 0,
+      padding: EdgeInsets.only(right: 5),
+      child: widget.node.hasIcon ? widget.node.icon : null,
     );
   }
 

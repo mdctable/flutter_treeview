@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 import 'tree_view_controller.dart';
 import 'tree_view_theme.dart';
@@ -76,6 +78,8 @@ class TreeView extends InheritedWidget {
   /// a single or double tap._
   final bool supportParentDoubleTap;
 
+  final ScrollController? scrollController;
+
   TreeView({
     Key? key,
     required this.controller,
@@ -88,6 +92,7 @@ class TreeView extends InheritedWidget {
     this.shrinkWrap = false,
     this.primary = true,
     this.nodeBuilder,
+    this.scrollController,
     TreeViewTheme? theme,
   })  : theme = theme ?? const TreeViewTheme(),
         super(
@@ -97,6 +102,7 @@ class TreeView extends InheritedWidget {
             shrinkWrap: shrinkWrap,
             primary: primary,
             physics: physics,
+            scrollController: scrollController,
           ),
         );
 
@@ -120,8 +126,14 @@ class _TreeViewData extends StatelessWidget {
   final bool? primary;
   final ScrollPhysics? physics;
 
-  const _TreeViewData(this._controller,
-      {this.shrinkWrap, this.primary, this.physics});
+  final ScrollController? scrollController;
+  const _TreeViewData(
+    this._controller, {
+    this.shrinkWrap,
+    this.primary,
+    this.physics,
+    this.scrollController,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -129,6 +141,7 @@ class _TreeViewData extends StatelessWidget {
     return Theme(
       data: parentTheme,
       child: ListView(
+        controller: scrollController,
         shrinkWrap: shrinkWrap!,
         primary: primary,
         physics: physics,
